@@ -159,16 +159,9 @@ html[data-theme="dark"] .desk-icon:hover { background: rgba(255, 255, 255, .08);
 }
 html[data-theme="dark"] .desk-icon span { text-shadow: 0 1px 0 rgba(0,0,0,.5); }
 
-.window-open-cue {
-  position: absolute; right: 26px; top: 20px; z-index: 0;
-  font-family: "Pixelify Sans"; font-size: clamp(1rem, 2.4vw, 1.5rem);
-  color: var(--ink); opacity: .6; text-align: right; line-height: 1.5;
-  text-shadow: 0 1px 0 rgba(255,255,255,.6);
-}
-html[data-theme="dark"] .window-open-cue { text-shadow: 0 1px 0 rgba(0,0,0,.5); }
-
 /* ---------- windows ---------- */
-#win-layer { position: absolute; inset: 0; z-index: 5; }
+#win-layer { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+.os-window { pointer-events: auto; }
 
 .os-window {
   position: absolute;
