@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mike Alinghawa - KipOS 95 portfolio. Windows-95 heart, pink-sky soul, wind chimes everywhere." />
+  <meta name="author" content="Mike Alinghawa" />
+  <title>Mike Alinghawa - KipOS 95</title>
+  <link rel="icon" href="images/favicon.svg?v=1" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/os.css?v=1" />
+</head>
+<body>
+
+  <!-- BOOT -->
+  <div id="boot" aria-label="boot screen">
+    <div class="boot-inner">
+      <img class="boot-kip" src="images/oscicons/kip.svg?v=1" alt="Kip the mudkip-style mascot" />
+      <div class="boot-title pixel">Kip<span>OS</span> <em>95</em></div>
+      <div class="boot-bar"><i></i></div>
+      <p class="boot-note">starting wind-chime services... loading Kip aboard</p>
+      <button class="boot-skip pixel" onclick="this.closest('#boot').classList.add('gone')">tap anywhere to skip</button>
+    </div>
+  </div>
+
+  <!-- WALLPAPER -->
+  <div class="clouds" aria-hidden="true"></div>
+  <div class="petals" aria-hidden="true"></div>
+
+  <!-- DESKTOP -->
+  <div id="desktop">
+    <p class="window-open-cue pixel">pick an icon.<br/>every tap rings a chime.</p>
+
+    <div class="desk-icons">
+      <button class="desk-icon" data-open="about">
+        <img src="images/oscicons/about.svg?v=1" alt="" /><span>about me.txt</span>
+      </button>
+      <button class="desk-icon" data-open="projects">
+        <img src="images/oscicons/projects.svg?v=1" alt="" /><span>projects.exe</span>
+      </button>
+      <button class="desk-icon" data-open="arcade">
+        <img src="images/oscicons/arcade.svg?v=1" alt="" /><span>arcade.exe</span>
+      </button>
+      <button class="desk-icon" data-open="anime">
+        <img src="images/oscicons/anime.svg?v=1" alt="" /><span>player-two.exe</span>
+      </button>
+      <button class="desk-icon" data-open="terminal">
+        <img src="images/oscicons/terminal.svg?v=1" alt="" /><span>terminal.exe</span>
+      </button>
+      <button class="desk-icon" data-open="contact">
+        <img src="images/oscicons/contact.svg?v=1" alt="" /><span>contact.exe</span>
+      </button>
+    </div>
+
+    <!-- WINDOWS -->
+    <div id="win-layer">
+
+      <template id="win-about">
+        <section class="os-window" data-app="about" style="left:120px; top:70px;">
+          <header class="os-titlebar">
+            <img src="images/oscicons/about.svg?v=1" alt="" />
+            <span class="os-title pixel">about me.txt</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body">
+            <div class="app-head">
+              <img src="images/oscicons/kip.svg?v=1" alt="Kip" />
+              <h3 class="app-title pixel">hi, i'm Mike. (Kip's human)</h3>
+            </div>
+            <p class="app-sub">Mike Alinghawa - I.T. student, game builder, hardware tinkerer, wind-chime enjoyer.</p>
+
+            <div class="kip-note">
+              <img src="images/oscicons/kip.svg?v=1" alt="" />
+              <p><strong>Kip the mascot says:</strong> I'm a mudkip at heart. On land I'm shy and weak, in water I lock in. Mike runs the same OS.</p>
+            </div>
+
+            <div class="timeline">
+              <div class="tl-item">
+                <h4>pisonet era <span class="year">age 5-6</span></h4>
+                <p>Ran to the computer shop with 1-3 pesos borrowed from my mother (she always knew). Falling in love with screens - brick by pixel.</p>
+              </div>
+              <div class="tl-item">
+                <h4>the cheat engine phase <span class="year">2018-19</span></h4>
+                <p>If the game wouldn't give it to me honestly, I gave it to myself. Found Python because I wanted to cheat better. Started real code, then stopped for a year - life crisis does that. I came back anyway.</p>
+              </div>
+              <div class="tl-item">
+                <h4>the GAS detour <span class="year">senior high</span></h4>
+                <p>Chose General Academic Strand because I genuinely didn't know what to do with my life. Then code waved hello again. Life corrected itself.</p>
+              </div>
+              <div class="tl-item">
+                <h4>the nerd summoning <span class="year">now - Cebu Eastern College</span></h4>
+                <p>4th year, B.S. I.T. My classmates call me a nerd. I heard "wanted" and took it as a promotion: Python, Java, C++, C#, HTML - whatever the console asks for.</p>
+              </div>
+              <div class="tl-item">
+                <h4>the lock-in years <span class="year">2024-2026</span></h4>
+                <p>Building games in Godot (beginner badge, proudly worn), tried Unity jam work, full-stack web (Django, Laravel, React), and hardware with ESP32/Arduino for FindMoSer, our capstone. I read code slowly - so I build things I can test. Competitions and small builds keep me alive.</p>
+              </div>
+            </div>
+
+            <p class="mini-heading">SKILL INVENTORY // what the machine holds</p>
+            <div class="chip-row">
+              <span class="chip">Python</span><span class="chip">Java</span><span class="chip">C#</span>
+              <span class="chip">C++</span><span class="chip">HTML/CSS</span><span class="chip">SQL</span>
+              <span class="chip">PHP</span><span class="chip">Django</span><span class="chip">Laravel</span>
+              <span class="chip">ASP.NET</span><span class="chip">React</span><span class="chip">PostgreSQL</span>
+              <span class="chip">SQLite</span><span class="chip">Docker</span><span class="chip">Git</span>
+              <span class="chip">Godot</span><span class="chip">Unity</span><span class="chip">ESP32</span>
+              <span class="chip">Arduino</span><span class="chip">Mapbox SDK</span><span class="chip">REST APIs</span>
+              <span class="chip">MVC</span><span class="chip">Game Dev</span><span class="chip hot">Augmented Reality</span>
+              <span class="chip hot">Vibe builder</span>
+            </div>
+
+            <hr class="os-hr" />
+            <p class="mini-heading">BADGES // none of these are invented. check the sources.</p>
+            <div class="chip-row">
+              <span class="chip badge">Top 9 - Hack4Gov 2026 (Cebu) - Team Ellipse / TungSahur</span>
+              <span class="chip badge">Top 12 Grand Finalist - Sinulog PropTech Hackathon</span>
+              <span class="chip badge">UPCSG Game Jam 2025 - Backend</span>
+              <span class="chip badge">CTO - AWS Student Builder Group Flurry</span>
+              <span class="chip badge">PSITS Core Member</span>
+            </div>
+          </div>
+        </section>
+      </template>
+
+      <template id="win-projects">
+        <section class="os-window" data-app="projects" style="left:150px; top:60px;">
+          <header class="os-titlebar">
+            <img src="images/oscicons/projects.svg?v=1" alt="" />
+            <span class="os-title pixel">projects.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body">
+            <div class="app-head">
+              <img src="images/oscicons/folder.svg?v=1" alt="" />
+              <h3 class="app-title pixel">the build folder</h3>
+            </div>
+            <p class="app-sub">real projects, real links. team work is labeled team work.</p>
+
+            <article class="proj-card">
+              <div class="shot"><a href="https://lms-nexora-lime.vercel.app/" target="_blank" rel="noopener"><img src="images/games/lms-live.png?v=1" alt="Nexora LMS live login screen" /></a></div>
+              <h4>Nexora LMS <span class="live-tag">LIVE</span></h4>
+              <span class="role-tag">backend, realtime systems, integrations</span>
+              <p>Offline-capable gamified learning platform: real-time PvP code battles with ELO matchmaking and brackets, offline AI tutor (Ollama Qwen 2.5 + Moondream), Judge0 sandbox for 40+ languages, AI quiz generator with anti-cheat, whole rig deployable on one laptop via Docker + Nginx for classroom LAN use.</p>
+              <div class="proj-links">
+                <a class="os-btn big" href="https://lms-nexora-lime.vercel.app/" target="_blank" rel="noopener">open the app</a>
+                <a class="os-btn big" href="https://github.com/ImNew222/LMS-Nexora" target="_blank" rel="noopener">repo</a>
+              </div>
+            </article>
+
+            <article class="proj-card">
+              <div class="shot"><a href="https://github.com/ImNew222/UniversityFInds-Cebu" target="_blank" rel="noopener"><img src="images/games/repo-university.png?v=1" alt="UniversityFinds repository" /></a></div>
+              <h4>UniversityFinds - Cebu</h4>
+              <p>Laravel 12 + PHP 8.2 + MySQL university discovery for Cebu City: matches students to programs across 10+ institutions, interactive 3D campus maps (Mapbox GL JS), live geolocation, terrain and routing.</p>
+              <div class="proj-links"><a class="os-btn big" href="https://github.com/ImNew222/UniversityFInds-Cebu" target="_blank" rel="noopener">repo</a></div>
+            </article>
+
+            <article class="proj-card">
+              <div class="shot"><a href="https://play.unity.com/en/games/b06754f2-7e58-4926-8a58-1699c6e7ab88/the-waking-nightmare-v2" target="_blank" rel="noopener"><img src="images/games/unity-waking.png?v=1" alt="The Waking Nightmare V2 on Unity Play" /></a></div>
+              <h4>The Waking Nightmare V2 <span class="live-tag">PLAYABLE</span></h4>
+              <span class="role-tag">solo build in 24 hours</span>
+              <p>Apocalypse-themed first-person puzzle horror (Unity 2022 LTS, C#): maze levels with animated obstacles, proximity-triggered chases, raycast interactions, modular FPS controller (sprint, crouch, head bob, zoom).</p>
+              <div class="proj-links"><a class="os-btn big" href="https://play.unity.com/en/games/b06754f2-7e58-4926-8a58-1699c6e7ab88/the-waking-nightmare-v2" target="_blank" rel="noopener">play it free</a></div>
+            </article>
+
+            <article class="proj-card">
+              <div class="shot"><a href="https://github.com/ImNew222/PropConnect" target="_blank" rel="noopener"><img src="images/games/repo-lms.png?v=2" alt="GitHub repositories overview" /></a></div>
+              <h4>PropConnect</h4>
+              <span class="role-tag">team build</span>
+              <p>Real-estate platform in Blade (Laravel) - property listings and connections for the Cebu market.</p>
+              <div class="proj-links"><a class="os-btn big" href="https://github.com/ImNew222/PropConnect" target="_blank" rel="noopener">repo</a></div>
+            </article>
+
+            <article class="proj-card">
+              <div class="shot"><a href="https://github.com/ImNew222" target="_blank" rel="noopener"><img src="images/oscicons/disk.svg?v=1" alt="hardware project placeholder icon" style="object-fit:contain; padding:16px; background:var(--panel-2);"/></a></div>
+              <h4>FindMoSer (capstone) <span class="chip hot">HARDWARE</span></h4>
+              <span class="role-tag">ESP32 / Arduino - in progress</span>
+              <p>Ongoing final-year capstone using ESP32/Arduino hardware. Ble-beacon classroom attendance flows and Ch341A-level tinkering live on my bench. Public material lands here when the build is presentable - honest as of today.</p>
+              <div class="proj-links"><a class="os-btn big" href="https://github.com/ImNew222" target="_blank" rel="noopener">github</a></div>
+            </article>
+
+            <p class="mini-heading">SMALL SAVED FILES // practice + games on the bench</p>
+            <div class="chip-row">
+              <span class="chip">Godot experiments (TungSahurZone)</span>
+              <span class="chip">Calculator_potato (Flutter midterm)</span>
+              <span class="chip">OurOcean (first running site, 2023)</span>
+              <span class="chip">observer-pattern demos</span>
+              <span class="chip">lots of prototypes on disk</span>
+            </div>
+            <div class="kip-note">
+              <img src="images/oscicons/kip.svg?v=1" alt="" />
+              <p>Most builds live on laptops, not repos yet. ask and I'll show a demo. Kip keeps the receipts.</p>
+            </div>
+          </div>
+        </section>
+      </template>
+
+      <template id="win-arcade">
+        <section class="os-window" data-app="arcade" style="left:180px; top:55px;">
+          <header class="os-titlebar">
+            <img src="images/oscicons/arcade.svg?v=1" alt="" />
+            <span class="os-title pixel">arcade.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body">
+            <div class="app-head">
+              <img src="images/oscicons/arcade.svg?v=1" alt="" />
+              <h3 class="app-title pixel">the games I make + the games I love</h3>
+            </div>
+            <p class="app-sub">building them keeps me alive. playing them keeps me human.</p>
+
+            <article class="proj-card">
+              <div class="shot"><img src="images/games/tungsahur-zone.png?v=1" alt="TungSahurZone town zone in Godot" /></div>
+              <h4>TungSahurZone <span class="chip badge">GODOT - IN DEV</span></h4>
+              <p>A pixel-art RPG zone builder project: town (hardware shop, waterfall, boats), interiors, subway boss encounters with Health / Insanity / P5H stats, rain systems, rescue events, tilemap state machines. Modern exterior tiles + real event flow (CityZone - SecondFloor - FutureZone).</p>
+              <div class="game-grid">
+                <div class="proj-card"><div class="shot"><img src="images/games/tungsahur-interior.png?v=1" alt="cozy interior scene" /></div><p>cozy interiors: cats included</p></div>
+                <div class="proj-card"><div class="shot"><img src="images/games/tungsahur-boss.png?v=1" alt="subway boss fight UI" /></div><p>subway boss: Tung Tung Sahur</p></div>
+              </div>
+              <div class="kip-note"><img src="images/oscicons/kip.svg?v=1" alt="" /><p>Project name inspired by the Hack4Gov team (Team Ellipse, aka TungSahur). Synergy, not coincidence: energy from one arena carried everywhere.</p></div>
+            </article>
+
+            <hr class="os-hr" />
+            <p class="mini-heading">OLD SOUL GAMES // loved, played, survived</p>
+            <div class="chip-row">
+              <span class="chip">Factorio - belts never sleep</span>
+              <span class="chip">OMORI - emotional gut punch</span>
+              <span class="chip">Elsword - childhood MMO</span>
+              <span class="chip">Roblox - the sandbox childhood</span>
+              <span class="chip">classic games</span>
+              <span class="chip">random forgotten titles (rip names)</span>
+              <span class="chip hot">and a shelf of half-memory games, cheering every comeback</span>
+            </div>
+
+            <p class="mini-heading">COMPETITIONS // where energy goes</p>
+            <div class="timeline">
+              <div class="tl-item"><h4>Hack4Gov 2026 <span class="year">Team Ellipse</span></h4><p>Overall Top 9 at the Cebu Regional competition. Team codename TungSahur, carried home and turned into a Godot zone.</p></div>
+              <div class="tl-item"><h4>Sinulog PropTech Hackathon <span class="year">Top 12</span></h4><p>Grand finalist with Proptech Philippines - my first taste of shipping under loud pressure.</p></div>
+              <div class="tl-item"><h4>UPCSG Game Jam 2025 <span class="year">UP-CS Guild</span></h4><p>Backend developer sprint - making working code while the room panics is a skill I now own.</p></div>
+            </div>
+          </div>
+        </section>
+      </template>
+
+      <template id="win-anime">
+        <section class="os-window" data-app="anime" style="left:210px; top:50px;">
+          <header class="os-titlebar">
+            <img src="images/oscicons/anime.svg?v=1" alt="" />
+            <span class="os-title pixel">player-two.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body">
+            <div class="app-head">
+              <img src="images/oscicons/heart.svg?v=1" alt="" />
+              <h3 class="app-title pixel">anime shelf</h3>
+            </div>
+            <p class="app-sub">the shows that run in background processes in me.</p>
+
+            <div class="anime-card">
+              <div class="anime-strip"></div>
+              <div>
+                <h4 class="pixel" style="font-size:1.1rem;">Violet Evergarden</h4>
+                <p style="font-size:.94rem; margin:6px 0;">Episode 10, the ghostwriting arc: a mother writing fifty years of letters, to be delivered on her daughter's future birthdays. Powerful letters, hands down; it stays in the chest long after the credits. Yes, I cried. No shame, it's a proud kind of crying.</p>
+                <div class="chip-row"><span class="chip">instant rewatch</span><span class="chip hot">cried = human bonus</span></div>
+              </div>
+            </div>
+
+            <div class="anime-card">
+              <div class="anime-strip"></div>
+              <div>
+                <h4 class="pixel" style="font-size:1.1rem;">K-On!</h4>
+                <p style="font-size:.94rem; margin:6px 0;">Team mascot alignment: <strong>Yui</strong> (with occasional Azunyan ceremonial protocol). Cuteness as a lifestyle, cake as nutrition. If my portfolio chimes at unexpected times, blame the ho-kago tea time energy.</p>
+                <div class="chip-row"><span class="chip badge">team: Yui</span><span class="chip">sometimes: Azunyan</span></div>
+              </div>
+            </div>
+
+            <hr class="os-hr" />
+            <p class="mini-heading">WHY ANIME IN A PORTFOLIO?</p>
+            <p>Because taste drives taste. Evergarden's slow, powerful dialogue taught me pacing; K-On's middles taught me warmth. Both leak into how I code interfaces and games: intentional, funny, a little sentimental.</p>
+
+            <div class="kip-note">
+              <img src="images/oscicons/kip.svg?v=1" alt="" />
+              <p>type "yui" on the desktop for giita mode. type "mudkip" for weather.</p>
+            </div>
+          </div>
+        </section>
+      </template>
+
+      <template id="win-contact">
+        <section class="os-window" data-app="contact" style="left:240px; top:90px;">
+          <header class="os-titlebar">
+            <img src="images/oscicons/contact.svg?v=1" alt="" />
+            <span class="os-title pixel">contact.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body contact-panel">
+            <div class="app-head">
+              <img src="images/oscicons/kip.svg?v=1" alt="Kip" />
+              <h3 class="app-title pixel">say hi to Mike (or Kip)</h3>
+            </div>
+            <p>Fastest inbox wins: a plain email. For jobs, jams, collabs, ESP32 chaos, or just a recommendation thread about Factorio efficiencies.</p>
+            <a class="os-btn big" href="mailto:alinghawamike@gmail.com">alinghawamike@gmail.com</a>
+            <a class="os-btn big" href="https://github.com/ImNew222" target="_blank" rel="noopener">github.com/ImNew222</a>
+            <p style="color:var(--ink-soft); font-size:.85rem;">usually replies between lectures, sprints and arcade sessions. chime speed: decent.</p>
+          </div>
+        </section>
+      </template>
+
+      <template id="win-terminal">
+        <section class="os-window" data-app="terminal" style="left:270px; top:110px;">
+          <header class="os-titlebar">
+            <img src="images/oscicons/terminal.svg?v=1" alt="" />
+            <span class="os-title pixel">terminal.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body" style="padding:10px 12px; background:#2b2138;">
+            <div class="terminal-window">
+              <div class="term-log"></div>
+              <div class="t-input-row">
+                <span class="t-prompt">kip@mike:~$</span>
+                <input class="t-field" autocomplete="off" spellcheck="false" aria-label="terminal input" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </template>
+
+    </div>
+  </div>
+
+  <!-- START MENU -->
+  <nav id="startme" aria-label="start menu">
+    <button class="me-item" data-open="about"><img src="images/oscicons/about.svg?v=1" alt="" />about me.txt</button>
+    <button class="me-item" data-open="projects"><img src="images/oscicons/projects.svg?v=1" alt="" />projects.exe</button>
+    <button class="me-item" data-open="arcade"><img src="images/oscicons/arcade.svg?v=1" alt="" />arcade.exe</button>
+    <button class="me-item" data-open="anime"><img src="images/oscicons/anime.svg?v=1" alt="" />player-two.exe</button>
+    <button class="me-item" data-open="terminal"><img src="images/oscicons/terminal.svg?v=1" alt="" />terminal.exe</button>
+    <button class="me-item" data-open="contact"><img src="images/oscicons/contact.svg?v=1" alt="" />contact.exe</button>
+    <p class="me-note pixel">KipOS 95 // built with chime-grade care</p>
+  </nav>
+  <div id="toast"><img src="images/oscicons/kip.svg?v=1" alt="" /><span id="toastMsg"></span></div>
+
+  <!-- TASKBAR -->
+  <div id="taskbar">
+    <button class="tb-start" id="tbStart" aria-label="start menu">
+      <img src="images/oscicons/kip.svg?v=1" alt="" /><span class="pixel">Kip</span>
+    </button>
+    <div class="tb-chips" id="chips"></div>
+    <div class="tb-right">
+      <button class="tb-btn" id="musicBtn" title="music: lofi chime loop"><img src="images/oscicons/spk-on.svg?v=1" alt="music" /></button>
+      <button class="tb-btn" id="sfxBtn" title="tapping chimes on/off"><img src="images/oscicons/chime.svg?v=1" alt="sfx" /></button>
+      <button class="tb-btn" id="themeBtn" title="light / dark"><img src="images/oscicons/moon.svg?v=1" alt="theme" /></button>
+      <div class="tb-clock"><span id="tbClock">--:--</span><span class="date" id="tbDate"></span></div>
+    </div>
+  </div>
+
+  <script src="shared/sound.js?v=1"></script>
+  <script src="shared/os.js?v=2"></script>
+</body>
+</html>
