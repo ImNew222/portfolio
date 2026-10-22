@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared/os.css?v=1" />
+  <link rel="stylesheet" href="apps/games.css?v=1" />
 </head>
 <body>
 
@@ -42,6 +43,9 @@
       </button>
       <button class="desk-icon" data-open="arcade">
         <img src="images/oscicons/arcade.svg?v=1" alt="" /><span>arcade.exe</span>
+      </button>
+      <button class="desk-icon" data-open="games">
+        <img src="images/oscicons/games.svg?v=1" alt="" /><span>games folder</span>
       </button>
       <button class="desk-icon" data-open="anime">
         <img src="images/oscicons/anime.svg?v=1" alt="" /><span>player-two.exe</span>
@@ -308,6 +312,61 @@
         </section>
       </template>
 
+      <template id="win-games">
+        <section class="os-window" data-app="games" style="width:min(560px, calc(100vw - 24px));">
+          <header class="os-titlebar">
+            <img src="images/oscicons/games.svg?v=1" alt="" />
+            <span class="os-title pixel">games folder</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body"><div class="game-host" data-game="games"><p class="gm-load">counting the games...</p></div></div>
+        </section>
+      </template>
+
+      <template id="win-chess">
+        <section class="os-window" data-app="chess" style="width:min(500px, calc(100vw - 24px));">
+          <header class="os-titlebar">
+            <img src="images/oscicons/chess.svg?v=1" alt="" />
+            <span class="os-title pixel">chess.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body"><div class="game-host" data-game="chess"><p class="gm-load">waking the engine...</p></div></div>
+        </section>
+      </template>
+
+      <template id="win-tetris">
+        <section class="os-window" data-app="tetris" style="width:min(460px, calc(100vw - 24px));">
+          <header class="os-titlebar">
+            <img src="images/oscicons/tetris.svg?v=1" alt="" />
+            <span class="os-title pixel">tetris.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body"><div class="game-host" data-game="tetris"><p class="gm-load">stacking blocks...</p></div></div>
+        </section>
+      </template>
+
+      <template id="win-flappy">
+        <section class="os-window" data-app="flappy" style="width:min(420px, calc(100vw - 24px));">
+          <header class="os-titlebar">
+            <img src="images/oscicons/flappy.svg?v=1" alt="" />
+            <span class="os-title pixel">flappy.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body"><div class="game-host" data-game="flappy"><p class="gm-load">warming up the wings...</p></div></div>
+        </section>
+      </template>
+
+      <template id="win-republika">
+        <section class="os-window" data-app="republika" style="width:min(620px, calc(100vw - 24px));">
+          <header class="os-titlebar">
+            <img src="images/oscicons/republika.svg?v=1" alt="" />
+            <span class="os-title pixel">republika.exe</span>
+            <div class="os-wbtns"><button class="os-wbtn x" aria-label="close">x</button></div>
+          </header>
+          <div class="os-body"><div class="game-host" data-game="republika"><p class="gm-load">opening the planning desk...</p></div></div>
+        </section>
+      </template>
+
       <template id="win-terminal">
         <section class="os-window" data-app="terminal" style="left:270px; top:110px;">
           <header class="os-titlebar">
@@ -335,6 +394,7 @@
     <button class="me-item" data-open="about"><img src="images/oscicons/about.svg?v=1" alt="" />about me.txt</button>
     <button class="me-item" data-open="projects"><img src="images/oscicons/projects.svg?v=1" alt="" />projects.exe</button>
     <button class="me-item" data-open="arcade"><img src="images/oscicons/arcade.svg?v=1" alt="" />arcade.exe</button>
+    <button class="me-item" data-open="games"><img src="images/oscicons/games.svg?v=1" alt="" />games folder</button>
     <button class="me-item" data-open="anime"><img src="images/oscicons/anime.svg?v=1" alt="" />player-two.exe</button>
     <button class="me-item" data-open="terminal"><img src="images/oscicons/terminal.svg?v=1" alt="" />terminal.exe</button>
     <button class="me-item" data-open="contact"><img src="images/oscicons/contact.svg?v=1" alt="" />contact.exe</button>
@@ -357,6 +417,7 @@
   </div>
 
   <script src="shared/sound.js?v=1"></script>
-  <script src="shared/os.js?v=2"></script>
+  <script src="shared/os.js?v=3"></script>
+  <script src="apps/registry.js?v=1"></script>
 </body>
 </html>

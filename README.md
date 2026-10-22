@@ -16,7 +16,8 @@ Most portfolios are a page you scroll. This one is a computer you use. Six deskt
 - Light mode (light pink + sky blue) and dark mode (soft plum), persisted and toggleable from the taskbar
 - Wind-chime sound effects synthesized live with the Web Audio API - open/close arpeggios, click ticks, no audio files
 - Lo-fi background music: a four-bar chime loop at 72 bpm with triangle pads and vinyl crackle, also synthesized, toggleable
-- A working terminal.exe with real commands: help, whoami, story, projects, hack4gov, cheatengine, mudkip, yui, contact, theme, clear (and sudo, which answers exactly like you expect)
+- A working terminal.exe with real commands: help, whoami, story, projects, games, hack4gov, cheatengine, mudkip, yui, contact, theme, clear (and sudo, which answers exactly like you expect)
+- A games folder on the desktop: four playable minigames, no libraries, no build step
 - Typed easter eggs (the terminal hints that two are hidden; one of them makes it rain)
 - You can drag the icons' windows around, ESC closes the top window, and everything runs on plain HTML/CSS/JS - zero frameworks, zero build step
 
@@ -25,6 +26,7 @@ Most portfolios are a page you scroll. This one is a computer you use. Six deskt
 - **about me.txt** - the story: pisonet kid at age 5, Cheat Engine at the family budget's expense, Python in 2018, the GAS detour, now a 4th-year IT student at Cebu Eastern College
 - **projects.exe** - Nexora (offline-first gamified LMS, live), UniversityFinds (Laravel + Mapbox), The Waking Nightmare V2 (24-hour Unity horror, playable), PropConnect, and FindMoSer (the ESP32 capstone, honestly labeled in progress)
 - **arcade.exe** - current Godot experiments (TungSahurZone: town zone, cozy interior, subway boss with Health/Insanity bars) and the competitions timeline
+- **games folder** - playable stuff: chess.exe (handsome Stockfish WASM engine vendored into apps/chess/, GPLv3, difficulty levels, tap-to-move works on phones), tetris.exe (7-bag, ghost pieces, saved high score), flappy.exe (kip vs pipes, saved best), and republika.exe - a hand-written Philippine governance simulation where you play one Filipino with a plan: 16 years, 5 gauges (integrity, economy, education, health, trust), a system that pushes back when you poke the rot, and multiple endings. No real officials are named.
 - **player-two.exe** - the anime shelf: Violet Evergarden ep 10 (the letter one) and K-On!
 - **terminal.exe** - see commands above
 - **contact.exe** - email and GitHub links

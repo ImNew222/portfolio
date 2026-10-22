@@ -107,7 +107,11 @@
   function placeWindow(win, app) {
     var count = Object.keys(openWindows).length;
     var W = Math.min(win.offsetWidth || 640, window.innerWidth - 40);
-    win.style.left = Math.max(90, (window.innerWidth - W) / 2 + (count % 4) * 26 - ((count % 2) * 52)) + "px";
+    if (window.innerWidth < 640) {
+      win.style.left = Math.max(8, (window.innerWidth - W) / 2) + "px";
+    } else {
+      win.style.left = Math.max(90, (window.innerWidth - W) / 2 + (count % 4) * 26 - ((count % 2) * 52)) + "px";
+    }
     win.style.top = Math.max(16, (window.innerHeight - 460) / 2 + (count % 3) * 24) + "px";
     if (app === "terminal") win.style.top = Math.max(16, window.innerHeight - 520) + "px";
   }
@@ -141,7 +145,10 @@
     placeWindow(clone, app);
     window.KipSound.open();
     if (app === "terminal") initTerminal(clone);
+    if (window.KipGames) window.KipGames.maybeMount(clone);
   }
+
+  window.kipOpen = openApp;
 
   function winToTop(app) {
     var rec = openWindows[app];
@@ -161,6 +168,7 @@
     var rec = openWindows[app];
     if (!rec) return;
     window.KipSound.close();
+    if (window.KipGames) window.KipGames.maybeUnmount(win);
     win.classList.add("closing");
     setTimeout(function () { win.remove(); }, 220);
     if (rec.chip) rec.chip.remove();
@@ -283,7 +291,7 @@
 
     var CMDS = {
       help: function () {
-        print("commands: help, whoami, story, projects, hack4gov, cheatengine, mudkip, yui, contact, theme, clear");
+        print("commands: help, whoami, story, projects, games, hack4gov, cheatengine, mudkip, yui, contact, theme, clear");
       },
       whoami: function () {
         print("Mike Alinghawa (kips agreed: 1). KipOS 95 user #002. Weak on grass, locked in in water.");
@@ -303,6 +311,14 @@
         print("tungsahurzone     [godot pixel rpg, subway boss, P5H]");
         print("findmoser         [ESP32 capstone, hardware tagged]");
         print("propconnect       [blade, real estate]");
+      },
+      games: function () {
+        title("games folder contents:");
+        print("chess.exe      [stockfish wasm engine, pick a mood]");
+        print("tetris.exe     [blocks live here and never pay rent]");
+        print("flappy.exe     [kip vs pipes, high score saved]");
+        print("republika.exe  [policy sim: fight the rot, keep the lights on]");
+        print("open them from the desktop games folder. no installers.");
       },
       hack4gov: function () {
         print("hack4gov 2026 cebu regional: TEAM ELLIPSE. overall top 9.");
