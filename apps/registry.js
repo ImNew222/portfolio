@@ -79,7 +79,6 @@ window.KipGames = (function () {
       '</div>';
     host.querySelectorAll("[data-launch]").forEach(function (btn) {
       btn.addEventListener("click", function () { launch(btn.getAttribute("data-launch")); });
-      btn.addEventListener("mouseenter", window.KipSound ? window.KipSound.tick : function () {});
     });
   }
 

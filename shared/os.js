@@ -187,15 +187,6 @@
     el.addEventListener("mouseenter", click);
   });
 
-  /* hover chimes for dynamically-created buttons (games, tiles, chips) */
-  var lastHover = null;
-  document.addEventListener("mouseover", function (e) {
-    var btn = e.target && e.target.closest ? e.target.closest(".gm-btn, .gm-tile, .os-btn, .me-item") : null;
-    if (!btn || btn === lastHover) return;
-    lastHover = btn;
-    click();
-  });
-
   /* ---------- start menu ---------- */
   var startBtn = $("#tbStart"), startme = $("#startme");
   startBtn.addEventListener("click", function () {
