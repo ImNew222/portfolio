@@ -2,7 +2,8 @@
 
 A Windows-95-style desktop OS portfolio, except the wallpaper is pastel and the mascot is Kip (a small blue fellow who is weak on grass but strong in water).
 
-Live: https://imnew222.github.io/portfolio/
+Live (Vercel): https://kipos95.vercel.app
+Live (GitHub Pages mirror): https://imnew222.github.io/portfolio/
 Repo: https://github.com/ImNew222/portfolio
 
 ## The idea
