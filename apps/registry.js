@@ -22,7 +22,7 @@ window.KipGames = (function () {
     if (loaded[id]) return;
     loaded[id] = true;
     var s = document.createElement("script");
-    s.src = "apps/" + id + ".js";
+    s.src = "apps/" + id + ".js?v=2";
     s.onload = function () { pending--; flush(); };
     s.onerror = function () {
       pending--;

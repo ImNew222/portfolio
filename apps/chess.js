@@ -226,6 +226,8 @@
 
     var st, history, sel = -1, dots = [], worker = null, ready = false, thinking = "no";
     var dead = isDead;
+    var engLog = window.__chessLog = window.__chessLog || [];
+    function elog(s) { engLog.push(Date.now() % 100000 + " " + s); if (engLog.length > 60) engLog.splice(0, 60 - engLog.length); }
 
     var engine = {
       start: function (skillV) {
@@ -237,6 +239,7 @@
         }
         worker.onmessage = function (ev) {
           var line = "" + ev.data;
+          elog("in:" + line.slice(0, 60));
           if (line.indexOf("uciok") > -1) {
             worker.postMessage("setoption name Skill Level value " + skillV);
             worker.postMessage("isready");
@@ -268,9 +271,10 @@
         doMove(find, "bot");
       },
       toMove: function () {
-        if (!ready || dead()) return;
+        if (!ready || dead()) { elog("toMove skip ready=" + ready); return; }
         thinking = "yes";
         statusEl.textContent = "engine: thinking about your life choices...";
+        elog("out:go moves=" + history.length);
         worker.postMessage("position startpos moves " + history.join(" "));
         worker.postMessage("go movetime 650");
       },
@@ -315,6 +319,7 @@
     }
     function doMove(m, who) {
       var wasCap = st.b[m.t] !== "." || m.flag === "ep";
+      elog("move:" + sq(m.f) + sq(m.t) + " by " + who);
       st = applyMove(st, m);
       history.push(uciOf(m));
       sel = -1; dots = [];
@@ -326,7 +331,8 @@
       return sq(m.f) + sq(m.t) + (m.flag === "q" ? "q" : "");
     }
     function afterTurn(who) {
-      var next = who === "you" ? player : (player === "w" ? "b" : "w");
+      /* side whose turn it is now: after YOU moved, the engine is up */
+      var next = who === "you" ? (player === "w" ? "b" : "w") : player;
       var moves = legalMoves(st, next);
       var chk = inCheck(st, next);
       if (moves.length === 0) {
